@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Aagman'24",
+    "price": "DJ Night",
+    "detail": "🎉 Excitement Alert! 🎉 Join us for an electrifying night at Aagman'24 🌟 as we groove under the stars with a DJ Night! 🎶✨  📅 Date: 02/03/2024 🕔 Time: 5:00 PM onwards 📍 Location: NCC Ground",
+    "image": "./r1.png"
+  },
+  {
+    "name": "ACM and Department of CSE",
+    "price": "Hack-A-Bit",
+    "detail": "Join us for the Grand Inauguration Ceremony of Hack-A-Bit'24, an extraordinary hackathon hosted by ACM BIT Mesra. ✨",
+    "image": "./r2.png"
+  },
+  {
+    "name": "Dhwani and SPIC MACAY",
+    "price": "NAAD X VIRASAT",
+    "detail": "Experience the harmonious convergence of tradition and individuality at NAAD X VIRASAT, an extraordinary collaborative event brought to you by Dhwani and SPIC MACAY, BIT MESRA.",
+    "image": "./r3.png"
+  },
+  {
+    "name": "Dhwani, Ehsaas and Dance Club",
+    "price": "Coalescence'24",
+    "detail": "Coalescence'24 is back with it's banging Cultural Night on the 2nd March'24 from 6:00pm onwards. This evening is sincerely dedicated to the Cultural enthusiasm showcasing the extraordinary talent of all the dance and singing forms across the entire world",
+    "image": "./r4.png"
+  },
+  {
+    "name": "Aagman 24",
+    "price": "Campus Spotlight",
+    "detail": "✨Hola, Freshers!✨ As the buzz around “Aagman 24” reaches its peak, we are thrilled to unveil the ‘icing on the cake’. Get ready to witness the magic unfold as we bring to you “ Campus Spotlight ”.",
+    "image": "./r5.png"
+  },
+  {
+    "name": "The Blood Donation Camp.",
+    "price": "66,353",
+    "detail": "Immersed in empathy and driven by the essence of benevolence, 3 JHAR CTC NCC unveils an exceptional occasion poised to impact numerous lives: The Blood Donation Camp Date: 2nd March, 2024 Time:10 A.M. to 3 P.M.Venue: BIT Dispensary.",
+    "image": "./r6.png"
+  }
+]

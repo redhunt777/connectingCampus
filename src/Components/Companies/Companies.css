@@ -1,0 +1,16 @@
+.c-container{
+    justify-content: space-around;
+    gap: 1rem;
+}
+.c-container>img{
+    width: 9rem;
+}
+.oye{
+    width: 250px;
+    height: 100px;
+}
+.heavy{
+    position: relative;
+    left: 100px;
+    top: 10px;
+}
