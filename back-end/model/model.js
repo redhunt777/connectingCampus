@@ -4,15 +4,26 @@ import { Schema } from "mongoose";
 const userSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    required: [true, "Name is required"],
   },
   email: {
     type: String,
-    required: true,
+    unique: true,
+    required: [true, "Email is required"],
+    validate: {
+      validator: function (v) {
+        return /^[a-zA-Z0-9._%+-]+@bitmesra\.ac\.in$/.test(v);
+      },
+      message: (props) =>
+        `${props.value} is not valid, Enter your college mail id!`,
+    },
   },
   password: {
     type: String,
-    required: true,
+    required: [true, "Password is required"],
+  },
+  token: {
+    type: String,
   },
 });
 
