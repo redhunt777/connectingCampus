@@ -21,7 +21,8 @@ const PostSignup = async (req, res) => {
   }
   var token = jwt.sign({ email: req.body.email }, process.env.SECRET_KEY, {
     expiresIn: 86400,
-  });
+  }); // expires in 24 hours
+
   user.password = Hashpassword;
   user.token = token;
 
@@ -30,6 +31,11 @@ const PostSignup = async (req, res) => {
     .then(() => {
       res
         .status(201)
+        .cookie("token", token, {
+          httpOnly: true,
+          expiresIn: 86400,
+          secure: true,
+        })
         .send({ name: req.body.name, email: req.body.email, token });
     })
     .catch((error) => {
@@ -39,13 +45,39 @@ const PostSignup = async (req, res) => {
 
 const PostLogin = async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
-  if (!user) {
-    return res.status(404).send("User not found");
+
+  try {
+    if (!user) {
+      return res.status(404).send("User not found");
+    }
+
+    const passwordIsValid = bcrypt.compareSync(
+      req.body.password,
+      user.password
+    ); // compare password
+
+    if (!passwordIsValid) {
+      return res.status(403).send("Invalid password");
+    }
+
+    var token = jwt.sign({ email: req.body.email }, process.env.SECRET_KEY, {
+      expiresIn: 86400,
+    }); // expires in 24 hours
+
+    user.token = token;
+    user.save().then(() => {
+      res
+        .status(200)
+        .cookie("token", token, {
+          httpOnly: true,
+          expiresIn: 86400,
+          secure: true, // Only send cookie over HTTPS
+        })
+        .send({ name: user.name, email: user.email, token });
+    });
+  } catch (error) {
+    res.status(400).send(error.message);
   }
-  if (user.password !== req.body.password) {
-    return res.status(403).send("Invalid password");
-  }
-  res.status(200).send("Login successful");
 };
 
 export { PostSignup, PostLogin };
