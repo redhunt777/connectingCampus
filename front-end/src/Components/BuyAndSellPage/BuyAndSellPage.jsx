@@ -38,7 +38,13 @@ const BuyAndSellPage = () => {
   return (
     <div className={style.main}>
       <Header />
-      <h4 style={{ paddingRight: "100px", textAlign: "right" }}>
+      <h4
+        style={{
+          paddingRight: "100px",
+          paddingTop: "50px",
+          textAlign: "right",
+        }}
+      >
         <button className="btn btn-primary">
           <Link to="/sell">Want To Sell?</Link>
         </button>

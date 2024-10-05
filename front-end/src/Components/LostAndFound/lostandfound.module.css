@@ -1,6 +1,5 @@
 .main {
-    background-color: #f4f4f4;
-    background: url("/hero-image.jpeg");
+    background-color: #f4f4f4;    
     min-height: 100vh;
     font-family: Arial, sans-serif;
 }

@@ -109,4 +109,14 @@ router.post("/carpool", async (req, res) => {
   }
 });
 
+router.get("/carpool", async (req, res) => {
+  try {
+    const carpool = await Carpool.find();
+    res.status(200).json(carpool);
+  } catch (err) {
+    console.log(err);
+    res.status(400).json({ message: err });
+  }
+});
+
 export default router;

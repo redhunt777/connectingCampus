@@ -1,5 +1,5 @@
 .main {
-    background-color: #f4f4f4;
+    background-color: #f4f4f4;    
     min-height: 100vh;
     font-family: Arial, sans-serif;
 }
@@ -14,7 +14,7 @@
 
 .card_body {
     padding: 30px;
-    text-align: center;
+    text-align: left;
 }
 
 .card_img_top {

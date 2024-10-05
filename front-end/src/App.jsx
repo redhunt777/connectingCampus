@@ -21,6 +21,7 @@ import LostAndFoundForm from "./Components/LostAndFoundForm/LostAndFoundForm.jsx
 import CarpoolForm from "./Components/CarpoolForm/CarpoolForm.jsx";
 import BuyAndSellPage from "./Components/BuyAndSellPage/BuyAndSellPage.jsx";
 import LostAndFoundPage from "./Components/LostAndFound/LostAndFound.jsx";
+import Carpool from "./Components/Carpool/Carpool.jsx";
 function App() {
   const url = "http://localhost:8000";
   const [user, setUser] = useState({
@@ -92,6 +93,10 @@ function App() {
               ></CarpoolForm>
             }
           />
+          <Route
+            path="/carpool"
+            element={<Carpool url={url}></Carpool>}
+          ></Route>
           <Route
             path="/buy-and-sell"
             element={<BuyAndSellPage></BuyAndSellPage>}

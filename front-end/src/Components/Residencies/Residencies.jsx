@@ -13,7 +13,6 @@ const Residencies = () => {
   const [searchedData, setSearchedData] = useState([]);
   useEffect(() => {
     let isMounted = true; // track whether the component is mounted
-
     axios
       .get("http://localhost:8000/submit/news")
       .then((res) => {

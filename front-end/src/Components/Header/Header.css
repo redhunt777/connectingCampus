@@ -1,11 +1,39 @@
 .h-wrapper{
     color: aliceblue;
+     background: linear-gradient(
+        346deg,
+        rgba(55, 55, 55, 0.04) 0%,
+        rgba(55, 55, 55, 0.04) 22%,
+        rgba(140, 140, 140, 0.04) 22%,
+        rgba(140, 140, 140, 0.04) 69%,
+        rgba(225, 225, 225, 0.04) 69%,
+        rgba(225, 225, 225, 0.04) 100%
+      ),
+      linear-gradient(
+        31deg,
+        rgba(55, 55, 55, 0.04) 0%,
+        rgba(55, 55, 55, 0.04) 42%,
+        rgba(140, 140, 140, 0.04) 42%,
+        rgba(140, 140, 140, 0.04) 85%,
+        rgba(225, 225, 225, 0.04) 85%,
+        rgba(225, 225, 225, 0.04) 100%
+      ),
+      linear-gradient(
+        55deg,
+        rgba(55, 55, 55, 0.04) 0%,
+        rgba(55, 55, 55, 0.04) 13%,
+        rgba(140, 140, 140, 0.04) 13%,
+        rgba(140, 140, 140, 0.04) 72%,
+        rgba(225, 225, 225, 0.04) 72%,
+        rgba(225, 225, 225, 0.04) 100%
+      ),
+      linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0));
     z-index: 99;
 }
 .h-container{
     justify-content: space-between;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
     color: var(--secondary);
 }
 .h-menu{
