@@ -34,42 +34,42 @@ router.post("/verify-otp", async (req, res) => {
 
 const verifyUser = async (req, res, next) => {
   const token = req.cookies.token;
+
+  if (!token) {
+    console.log("Token not found");
+    return res.status(403).json({ status: false, message: "Token not found" });
+  }
+
   try {
-    if (!token) {
-      return res
-        .status(403)
-        .json({ status: false, message: "Token not found" });
-    }
-    jwt.verify(token, process.env.JWT_KEY, (err, decoded) => {
-      if (err) {
-        return res
-          .status(403) // Forbidden status code
-          .json({ status: false, message: "Invalid token" });
-      }
-      next();
-    });
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);
+    req.user = decoded; // Pass the decoded user info to the next middleware
+    next();
   } catch (err) {
-    console.log(err);
+    console.log("Invalid token", err.message);
+    return res.status(403).json({ status: false, message: "Invalid token" });
   }
 };
 
-router.get("/verify", verifyUser, (req, res) => {
-  const token = req.cookies.token;
-  jwt
-    .verify(token, process.env.process.env.SECRET_KEY, (err, decoded) => {
-      User.find({ email: decoded.email }).then((student) => {
-        res.status(200).json({
-          email: decoded.email,
-          name: student[0].name,
-          status: true,
-          message: "User verified",
-        });
-      });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json({ status: false, message: "Server error" });
+router.get("/verify", verifyUser, async (req, res) => {
+  try {
+    const { email } = req.user; // Access the decoded token data
+    const user = await User.findOne({ email }); // Use findOne instead of find
+
+    if (!user) {
+      return res.status(404).json({ status: false, message: "User not found" });
+    }
+
+    return res.status(200).json({
+      email: user.email,
+      name: user.name,
+      status: true,
+      admin: user.admin,
+      message: "User verified",
     });
+  } catch (err) {
+    console.log("Server error", err);
+    return res.status(500).json({ status: false, message: "Server error" });
+  }
 });
 
 router.patch("/update", verifyUser, (req, res) => {

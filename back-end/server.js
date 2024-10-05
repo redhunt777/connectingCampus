@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import morgan from "morgan";
 import router from "./routes/routes.js";
+import submit from "./routes/submit.js";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import cors from "cors";
@@ -19,6 +20,7 @@ app.use(
 app.use(express.json()); // body parser middleware for json data parsing from request body
 app.use(cookieParser());
 app.use("/auth/user", router); // routing
+app.use("/submit", submit); // routing
 
 //connect to mongodb
 main().catch((err) => console.log(err));

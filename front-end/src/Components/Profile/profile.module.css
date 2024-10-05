@@ -1,0 +1,77 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url("/hero-image.jpeg");
+}
+
+
+.profile_box{
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    width: 600px;
+}
+
+/* Left Section (Profile Image) */
+.left {
+    margin-right: 20px;
+}
+
+.profile_image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Separator (Vertical Line) */
+.separator {
+    width: 1px;
+    height: 100%;
+    background-color: #ccc;
+    margin-right: 20px;
+}
+
+/* Right Section (Profile Information) */
+.right {
+    flex: 1;
+}
+
+.profile_box h2 {
+    margin-bottom: 20px;
+}
+
+.form_group {
+    margin-bottom: 15px;
+}
+
+.form_group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form_group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}

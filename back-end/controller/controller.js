@@ -14,7 +14,7 @@ const signup = async (req, res) => {
     }
     const hashedPassword = await bcrypt.hash(data.password, 10);
     const student = new User({
-      name: data.name,
+      name: data.username,
       email: data.email,
       password: hashedPassword,
     });
@@ -60,7 +60,7 @@ const Login = async (req, res) => {
         .send({ name: user.name, email: user.email, token });
     });
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(400).send({ message: error.message });
   }
 };
 
