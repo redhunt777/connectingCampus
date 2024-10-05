@@ -12,7 +12,7 @@ const userSchema = new Schema({
     required: [true, "Email is required"],
     validate: {
       validator: function (v) {
-        return /^[a-zA-Z0-9._%+-]+@bitmesra\.ac\.in$/.test(v);
+        return /^[a-zA-Z0-9._%+-]+@bitmesra\.ac\.in$/.test(v); // regex for college mail id validation (bitmesra.ac.in)
       },
       message: (props) =>
         `${props.value} is not valid, Enter your college mail id!`,
@@ -22,8 +22,9 @@ const userSchema = new Schema({
     type: String,
     required: [true, "Password is required"],
   },
-  token: {
-    type: String,
+  admin: {
+    type: Boolean,
+    default: false,
   },
 });
 
